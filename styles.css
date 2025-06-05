@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Fondo general */
 body {
   background: #F5F5F5;
   color: #2E2E2E;
@@ -15,6 +17,7 @@ body {
   padding: 20px;
 }
 
+/* Contenedor principal */
 .container {
   width: 100%;
   max-width: 720px;
@@ -25,12 +28,14 @@ body {
   margin-bottom: 30px;
 }
 
+/* Títulos */
 h1, h2 {
   color: #C8102E;
   margin-bottom: 20px;
   text-align: center;
 }
 
+/* Inputs y textarea */
 input[type="email"],
 input[type="password"],
 textarea {
@@ -50,6 +55,7 @@ textarea:focus {
   outline: none;
 }
 
+/* Botones */
 button {
   background-color: #C8102E;
   color: white;
@@ -71,6 +77,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* Mensajes */
 #mensaje {
   color: #8B001F;
   text-align: center;

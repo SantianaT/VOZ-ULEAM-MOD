@@ -38,7 +38,7 @@ form.addEventListener('submit', async (e) => {
     fecha: new Date(),
     autor: user.uid,
     autorEmail: user.email,  // Guardamos también el correo del autor
-    votantes: []  // Importante: inicializamos lista de votantes
+    votantes: []  //Inicializamos lista de votantes
   });
 
   document.getElementById('contenido').value = '';
@@ -108,7 +108,7 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     document.getElementById("usuario-info").innerText = `Sesión iniciada: ${user.email}`;
   } else {
-    location.href = "index.html"; // Si no hay sesión, redirige al login
+    location.href = "index.html";
   }
 });
 

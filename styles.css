@@ -1,82 +1,142 @@
-/* Reset de márgenes y paddings */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fuentes */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #FFFFFF;
-  color: #333;
-  line-height: 1.6;
+  background: #F5F5F5;
+  color: #2E2E2E;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-/* Encabezados */
-h1, h2, h3 {
-  color: #FF0000;
-  font-weight: bold;
+.container {
+  width: 100%;
+  max-width: 720px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(200, 0, 0, 0.2);
+  padding: 30px 40px;
+  margin-bottom: 30px;
 }
 
-/* Botones */
-button {
-  background-color: #FF0000;
-  color: #FFFFFF;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+h1, h2 {
+  color: #C8102E;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-button:hover {
-  background-color: #94C11F;
-}
-
-/* Formularios */
 input[type="email"],
 input[type="password"],
 textarea {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 2px solid #C8102E;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
 }
 
-/* Contenedor de publicaciones */
-#publicaciones {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 20px;
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: #8B001F;
+  outline: none;
 }
 
-#publicaciones div {
-  background-color: #F9F9F9;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#publicaciones p {
-  margin-bottom: 10px;
-}
-
-/* Filtro */
-#filtro {
-  padding: 10px;
+button {
+  background-color: #C8102E;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 12px 25px;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #FFFFFF;
-  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  margin-right: 10px;
 }
 
-/* Mensajes */
+button:hover:not(:disabled) {
+  background-color: #8B001F;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 #mensaje {
+  color: #8B001F;
+  text-align: center;
   margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Publicaciones */
+.publicacion {
+  border: 1.5px solid #C8102E;
+  border-radius: 7px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  background-color: #FFF0F1;
+  box-shadow: 0 3px 8px rgba(200, 0, 0, 0.1);
+}
+
+.publicacion p {
+  margin-bottom: 8px;
+}
+
+.publicacion small {
+  color: #8B001F;
+}
+
+.publicacion .info {
+  font-size: 0.9rem;
+  color: #8B001F;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.publicacion button {
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* Formulario publicar */
+#publicar-form textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+/* Barra superior (ejemplo si tienes header) */
+header {
+  width: 100%;
+  max-width: 720px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header button {
+  background-color: transparent;
+  color: #C8102E;
+  font-weight: 700;
   font-size: 1rem;
-  color: #FF0000;
+  padding: 6px 10px;
+  border: 2px solid #C8102E;
+  border-radius: 5px;
+}
+
+header button:hover {
+  background-color: #C8102E;
+  color: white;
 }

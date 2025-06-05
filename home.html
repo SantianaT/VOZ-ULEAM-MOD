@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Voz - Iniciar Sesión</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Agrega esto en el home.html, por ejemplo arriba -->
+  <div id="usuario-info"></div>
+  <button id="btn-logout">Cerrar sesión</button>
+
+  <h2>Publicaciones</h2>
+  <form id="publicar-form">
+    <textarea id="contenido" placeholder="Escribe tu propuesta..."></textarea>
+    <button type="submit">Publicar</button>
+  </form>
+
+  <select id="filtro">
+    <option value="recientes">Más recientes</option>
+    <option value="votadas">Más votadas</option>
+  </select>
+
+  <div id="publicaciones"></div>
+
+  <script type="module" src="./scripts/main.js"></script>
+</body>

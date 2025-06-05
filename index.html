@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Voz - Iniciar Sesión</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Iniciar Sesión</h2>
+  <input type="email" id="email" placeholder="Correo institucional" />
+  <input type="password" id="password" placeholder="Contraseña" />
+  <button onclick="login()">Entrar</button>
+  <button onclick="register()">Registrarse</button>
+
+  <p id="mensaje"></p>
+
+  <!-- Firebase App y Auth -->
+  <script type="module">
+    // Importaciones desde Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+
+    // Tu configuración de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyCQUu6h0-jmaGQHJSsXDNaIFoY4T7wyjYs",
+      authDomain: "voz-universitaria.firebaseapp.com",
+      projectId: "voz-universitaria",
+      storageBucket: "voz-universitaria.firebasestorage.app",
+      messagingSenderId: "954771681740",
+      appId: "1:954771681740:web:5d846576f63199f4c32d69",
+      measurementId: "G-PDM3YETVJC"
+    };
+
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Función para iniciar sesión
+    window.login = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          window.location.href = "home.html";
+        })
+        .catch((error) => {
+          document.getElementById("mensaje").innerText = "Error: " + error.message;
+        });
+    };
+
+    // Función para registrarse
+    window.register = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          document.getElementById("mensaje").innerText = "Registro exitoso ✅";
+        })
+        .catch((error) => {
+          document.getElementById("mensaje").innerText = "Error: " + error.message;
+        });
+    };
+  </script>
+</body>
+</html>
